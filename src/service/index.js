@@ -11,10 +11,11 @@ export const getData = async (url) => {
   }
 };
 
-export const storeData = async (url, data) => {
+export const storeData = async (url, data, blank = false) => {
   try {
-    const response = await axios.post(`${BASE_URL}${url}`, data);
-    return response.data;
+    const baseUrl = blank ? `${BASE_URL}${url}` : `${url}`;
+    const response = await axios.post(baseUrl, data);
+    return response;
   } catch (error) {
     return error;
   }
