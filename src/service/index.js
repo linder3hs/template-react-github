@@ -3,13 +3,10 @@ import { BASE_URL } from "./global";
 
 export const getData = async (url) => {
   try {
-    const response = await axios.get(`${BASE_URL}${url}`, {
-      headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-      },
-    });
+    const response = await axios.get(`${BASE_URL}${url}`);
     return response.data;
   } catch (error) {
+    console.log("error", error);
     return error;
   }
 };

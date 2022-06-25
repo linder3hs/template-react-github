@@ -32,7 +32,7 @@ const Home = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <Button variant="contained" color="primary" onClick={getUserFromGitHub}>
-          My first button
+          Buscar usuario
         </Button>
       </div>
       <div>
